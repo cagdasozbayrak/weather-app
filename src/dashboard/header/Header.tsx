@@ -17,6 +17,7 @@ function Header(props: IHeaderProps) {
             {props.title !== 'Dashboard' && (
                 <ArrowBackIcon
                     className="arrow-back"
+                    aria-label="arrow-back-icon"
                     onClick={props.onClickBack}
                 />
             )}

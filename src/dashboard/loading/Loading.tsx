@@ -3,7 +3,7 @@ import { CircularProgress } from '@mui/material'
 
 interface ILoadingProps {
     loading: boolean
-    children: ReactNode
+    children?: ReactNode
 }
 
 /**
@@ -12,7 +12,11 @@ interface ILoadingProps {
  * @constructor
  */
 function Loading(props: ILoadingProps) {
-    return props.loading ? <CircularProgress /> : <>{props.children}</>
+    return props.loading ? (
+        <CircularProgress aria-label="loading-icon" />
+    ) : (
+        <>{props.children}</>
+    )
 }
 
 export default Loading
