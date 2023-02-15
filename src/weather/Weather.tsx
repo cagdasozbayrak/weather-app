@@ -6,7 +6,7 @@ interface WeatherProps {
 }
 
 const owmClient = new OWMOneCallClient()
-const unit = "°C";
+const unit = '°C'
 
 function Weather(props: WeatherProps) {
     const [temperature, setTemperature] = useState(0)
