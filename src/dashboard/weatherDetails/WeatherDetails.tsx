@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { OWMWeatherClient } from '../api/OWMWeatherClient'
+import { OWMWeatherClient } from '../../api/OWMWeatherClient'
 import WeatherDetailsExtra from './weatherDetailsExtra/WeatherDetailsExtra'
 import './weatherDetails.css'
 

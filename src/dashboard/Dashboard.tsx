@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Weather from './weather/Weather'
 import './dashboard.css'
-import WeatherDetails from '../weatherDetails/WeatherDetails'
-import Header from '../header/Header'
+import WeatherDetails from './weatherDetails/WeatherDetails'
+import Header from './header/Header'
 
 const initialState = { location: 'Dashboard', show: false }
 
