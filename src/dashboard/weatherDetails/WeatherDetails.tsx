@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { OWMWeatherClient } from '../../api/OWMWeatherClient'
 import WeatherDetailsExtra from './weatherDetailsExtra/WeatherDetailsExtra'
 import './weatherDetails.css'
+import Loading from '../loading/Loading'
 
 interface IWeatherDetailsProps {
     location: string
@@ -33,8 +34,10 @@ const unit = '°C'
 
 function WeatherDetails(props: IWeatherDetailsProps) {
     const [state, setState] = useState(initialState)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        setLoading(true)
         owmClient.retrieveWeatherInfo(props.location).then((res) => {
             const { temp, temp_min, temp_max, humidity } = res.main
             const { sunset, sunrise } = res.sys
@@ -50,6 +53,7 @@ function WeatherDetails(props: IWeatherDetailsProps) {
                 sunrise,
                 visibility,
             })
+            setLoading(false)
         })
     }, [props.location])
 
@@ -69,13 +73,15 @@ function WeatherDetails(props: IWeatherDetailsProps) {
 
     return (
         <div className="weather-details-wrapper">
-            {renderDetails}
-            <WeatherDetailsExtra
-                sunrise={state.sunrise}
-                sunset={state.sunset}
-                humidity={state.humidity}
-                visibility={state.visibility}
-            />
+            <Loading loading={loading}>
+                {renderDetails}
+                <WeatherDetailsExtra
+                    sunrise={state.sunrise}
+                    sunset={state.sunset}
+                    humidity={state.humidity}
+                    visibility={state.visibility}
+                />
+            </Loading>
         </div>
     )
 }

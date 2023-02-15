@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { OWMWeatherClient } from '../../api/OWMWeatherClient'
+import { CircularProgress } from '@mui/material'
+import Loading from '../loading/Loading'
 
 interface IWeatherProps {
     location: string
@@ -11,11 +13,14 @@ const unit = '°C'
 
 function Weather(props: IWeatherProps) {
     const [temperature, setTemperature] = useState(0)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        owmClient
-            .retrieveWeatherInfo(props.location)
-            .then((res) => setTemperature(res.main.temp))
+        setLoading(true)
+        owmClient.retrieveWeatherInfo(props.location).then((res) => {
+            setTemperature(res.main.temp)
+            setLoading(false)
+        })
     }, [props.location])
 
     const renderLocation = () => (
@@ -25,11 +30,19 @@ function Weather(props: IWeatherProps) {
     const renderTemperature = () => (
         <div className="temperature">{`${temperature.toFixed(0)} ${unit}`}</div>
     )
-
-    return (
-        <div className="weather" onClick={props.onClickWeather(props.location)}>
+    const renderContent = () => (
+        <Loading loading={loading}>
             {renderLocation()}
             {renderTemperature()}
+        </Loading>
+    )
+
+    return (
+        <div
+            className={'weather' + (loading ? ' loading' : '')}
+            onClick={props.onClickWeather(props.location)}
+        >
+            {renderContent()}
         </div>
     )
 }

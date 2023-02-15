@@ -17,3 +17,7 @@
     padding: 30px 20px;
     margin: 20px;
 }
+
+.loading {
+    justify-content: center !important;
+}
