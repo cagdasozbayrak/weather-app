@@ -45,7 +45,7 @@ export class OWMWeatherClient {
     async retrieveWeatherInfo(location: string): Promise<IWeatherAPIResponse> {
         const geocodingResponses =
             await this.geocodingClient.retrieveGeocodingInfo(location)
-        const { lat, lon } = geocodingResponses[0]
+        const { lat, lon } = geocodingResponses
         const { data } = await this.axiosClient.get<IWeatherAPIResponse>(
             `${API_VERSION}/${ENDPOINT}`,
             { params: { lat, lon } }

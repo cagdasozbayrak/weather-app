@@ -17,10 +17,12 @@ function Weather(props: IWeatherProps) {
 
     useEffect(() => {
         setLoading(true)
-        owmClient.retrieveWeatherInfo(props.location).then((res) => {
-            setTemperature(res.main.temp)
-            setLoading(false)
-        })
+        if (props.location !== '') {
+            owmClient.retrieveWeatherInfo(props.location).then((res) => {
+                setTemperature(res.main.temp)
+                setLoading(false)
+            })
+        }
     }, [props.location])
 
     const renderLocation = () => (
