@@ -11,6 +11,7 @@ body {
     width: 100vw;
     font-size: 4rem;
     font-weight: 200;
+    user-select: none;
 }
 
 code {
@@ -24,4 +25,5 @@ code {
     align-items: flex-start;
     height: 100vh;
     width: 100vw;
+    flex-flow: column;
 }

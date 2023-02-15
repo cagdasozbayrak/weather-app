@@ -1,5 +1,4 @@
 .header {
-    position: absolute;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -15,4 +14,5 @@
 
 .arrow-back {
     margin-left: 20px;
+    cursor: pointer;
 }

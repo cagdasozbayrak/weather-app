@@ -4,7 +4,7 @@
     align-items: baseline;
     flex: 1;
     height: 100%;
-    margin-top: 4.5rem;
+    width: 100%;
 }
 
 .dashboard > .weather {
@@ -16,6 +16,7 @@
     border-radius: 5px;
     padding: 30px 20px;
     margin: 20px;
+    cursor: pointer;
 }
 
 .loading {
