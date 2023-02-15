@@ -16,10 +16,17 @@ export interface IWeatherAPIResponse {
     ]
     main: {
         temp: number
-        feels_like: number
+        humidity: number
+        temp_max: number
+        temp_min: number
     }
+    sys: {
+        sunrise: number
+        sunset: number
+    }
+    visibility: number
 }
-export class OWMOneCallClient {
+export class OWMWeatherClient {
     axiosClient: AxiosInstance
     geocodingClient: OWMGeocodingClient
     constructor() {
@@ -29,7 +36,6 @@ export class OWMOneCallClient {
             params: {
                 appid: process.env.REACT_APP_OWM_APIKEY,
                 units: DEFAULT_UNIT,
-                exclude: 'hourly,daily,minutely',
             },
             headers: { 'Content-Type': 'application/json' },
         })

@@ -1,0 +1,17 @@
+.weather-details-extra {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.info-wrapper {
+}
+
+.extra-info {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    padding: 10px;
+}

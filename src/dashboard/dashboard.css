@@ -1,9 +1,9 @@
 .dashboard {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    align-items: baseline;
+    flex: 1;
+    height: 100%;
 }
 
 .dashboard > .weather {
@@ -13,7 +13,6 @@
     flex: 1;
     border: white solid;
     border-radius: 5px;
-    margin: 1%;
     padding: 30px 20px;
-    font-size: xxx-large;
+    margin: 20px;
 }

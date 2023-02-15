@@ -7,9 +7,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #1a1a18;
     color: white;
+    height: 100vh;
+    width: 100vw;
+    font-size: 4rem;
+    font-weight: 200;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
 }
