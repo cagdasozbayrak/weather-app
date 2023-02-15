@@ -8,6 +8,11 @@ interface IWeatherDetailsExtraProps {
     visibility: number
 }
 
+/**
+ * Renders extra details such as sunrise, sunset, humidity and visibility
+ * @param props
+ * @constructor
+ */
 function WeatherDetailsExtra(props: IWeatherDetailsExtraProps) {
     const renderDayTimeInfo = (title: 'Sunrise' | 'Sunset', time: number) => (
         <div className="extra-info">

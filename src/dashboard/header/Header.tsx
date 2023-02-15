@@ -6,6 +6,11 @@ interface IHeaderProps {
     onClickBack: () => void
 }
 
+/**
+ * Renders header which shows the title of the current page
+ * @param props
+ * @constructor
+ */
 function Header(props: IHeaderProps) {
     return (
         <header className="header">

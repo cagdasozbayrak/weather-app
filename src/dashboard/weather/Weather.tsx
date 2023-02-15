@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { OWMWeatherClient } from '../../api/OWMWeatherClient'
-import { CircularProgress } from '@mui/material'
 import Loading from '../loading/Loading'
 
+/**
+ * Displays location name with temperature
+ */
 interface IWeatherProps {
     location: string
     onClickWeather: (loc: string) => () => void

@@ -32,6 +32,11 @@ const initialState: IWeatherDetailsState = {
 const owmClient = new OWMWeatherClient()
 const unit = '°C'
 
+/**
+ * Renders detailed weather information of a certain location
+ * @param props
+ * @constructor
+ */
 function WeatherDetails(props: IWeatherDetailsProps) {
     const [state, setState] = useState(initialState)
     const [loading, setLoading] = useState(true)

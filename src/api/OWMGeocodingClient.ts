@@ -17,6 +17,9 @@ export interface IReverseGeocodingResponse {
     name: string
 }
 
+/**
+ * Provides functions to perform geolocation and reverse geolocation using OpenWeatherMap Geolocation API
+ */
 export class OWMGeocodingClient {
     axiosClient: AxiosInstance
 

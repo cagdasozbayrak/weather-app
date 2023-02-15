@@ -8,6 +8,10 @@ import { useGeolocated } from 'react-geolocated'
 const initialState = { location: 'Dashboard', show: false }
 const owmGeocodingClient = new OWMGeocodingClient()
 
+/**
+ * Renders dashboard - main component of the app
+ * @constructor
+ */
 function Dashboard() {
     const [showDetails, setShowDetails] = useState(initialState)
     const [location, setLocation] = useState('')

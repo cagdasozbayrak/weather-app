@@ -26,6 +26,10 @@ export interface IWeatherAPIResponse {
     }
     visibility: number
 }
+
+/**
+ * Provides functions to fetch weather data from OpenWeatherMapAPI
+ */
 export class OWMWeatherClient {
     axiosClient: AxiosInstance
     geocodingClient: OWMGeocodingClient
