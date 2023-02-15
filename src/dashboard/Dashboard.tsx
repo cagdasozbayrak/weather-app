@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import Weather from './weather/Weather'
 import './dashboard.css'
 import WeatherDetails from '../weatherDetails/WeatherDetails'
+import Header from '../header/Header'
+
+const initialState = { location: 'Dashboard', show: false }
 
 function Dashboard() {
-    const [showDetails, setShowDetails] = useState({
-        location: 'london',
-        show: false,
-    })
+    const [showDetails, setShowDetails] = useState(initialState)
     const onClickWeather = (location: string) => () =>
         setShowDetails({ location, show: true })
+    const onClickBack = () => setShowDetails(initialState)
+    const getTitle = () =>
+        showDetails.show ? showDetails.location : 'Dashboard'
 
     const renderWeather = () => (
         <>
@@ -23,9 +26,12 @@ function Dashboard() {
         <WeatherDetails location={showDetails.location} />
     )
     return (
-        <div className="dashboard">
-            {showDetails.show ? renderDetails() : renderWeather()}
-        </div>
+        <>
+            <Header title={getTitle()} onClickBack={onClickBack} />
+            <div className="dashboard">
+                {showDetails.show ? renderDetails() : renderWeather()}
+            </div>
+        </>
     )
 }
 

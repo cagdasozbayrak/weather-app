@@ -1,0 +1,18 @@
+.header {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    transform: translate(-50%, 0);
+    left: 50%;
+}
+
+.arrow-back {
+    margin-left: 20px;
+}
